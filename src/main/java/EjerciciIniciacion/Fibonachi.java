@@ -15,8 +15,8 @@ public class Fibonachi {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
-        int numerofibo = devolverFibonachiRecursivo(11  );
+        System.out.println("--------Fibonacci Factorial------- ");
+        int numerofibo = devolverFibonachiRecursivo(3 );
         /*
         0---->0
         1----->1
@@ -31,21 +31,21 @@ public class Fibonachi {
         10--->55
          */
         System.out.println(numerofibo);
-        System.out.println("---------Fibonachi iterativo-----");
-        devolverFibonachiIterativo(10);
+        System.out.println("---------Fibonacci iterativo-----");
+        devolverFibonachiIterativo(6);
 
+        System.out.println("Vico Fibo");
+        
+        int n = fiboTerativoVico(5);
+        System.out.println(n);
   
     }
 
     public static int devolverFibonachiRecursivo(int n) {
         int numero = Math.abs(n);
 
-        if (numero == 0) {
-
-            return 0;
-
-        } else if (numero == 1) {
-            return 1;
+       if(n<2){
+           return n;
         } else {
 
             return devolverFibonachiRecursivo(n - 1) + devolverFibonachiRecursivo(n - 2);
@@ -57,7 +57,7 @@ public class Fibonachi {
         int numero = Math.abs(n);
         int fib = 1;
         int fibPrevio = 1;
-        for (int i = 0; i < numero; i++) {
+        for (int i = 2; i < numero; i++) {
             int aux = fib;
             fib += fibPrevio;
             fibPrevio = aux;
@@ -66,6 +66,21 @@ public class Fibonachi {
         }
 
         
+    }
+    
+    public static int fiboTerativoVico(int n){
+        int numero = Math.abs(n);
+        int resultado =0;
+        int n1 = 0;
+        int n2 = 1;
+        
+        for (int i = 0; i < numero; i++) {
+            resultado = n1 +2;
+            n2=n1;
+            n1=resultado;
+        }
+        
+        return resultado;
     }
 
 }
