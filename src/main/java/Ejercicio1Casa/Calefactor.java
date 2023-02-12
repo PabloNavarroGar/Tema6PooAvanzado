@@ -2,16 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Ejercicio1;
+package Ejercicio1Casa;
+
+import java.util.Objects;
 
 /**
  *
  * @author pablo
  */
 public class Calefactor {
-    private int temperatura;
+    private Integer temperatura;
 
-    public Calefactor(int temperatura) {
+    public Calefactor(Integer temperatura) {
         this.temperatura = temperatura;
         
         
@@ -53,7 +55,7 @@ public class Calefactor {
             return false;
         }
         final Calefactor other = (Calefactor) obj;
-        return this.temperatura == other.temperatura;
+        return Objects.equals(this.temperatura, other.temperatura);
     }
     
    public void encender(){
@@ -67,7 +69,7 @@ public class Calefactor {
    }
     
     
-    public void fijarTemperatura(int temperatura){
+    public void fijarTemperatura(Integer temperatura){
         
         System.out.println("La temperatura se puerto a " +temperatura+" grados");
     }

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Ejercicio1;
+package Ejercicio1Casa;
 
 import java.util.Objects;
 
@@ -16,10 +16,11 @@ public class Puerta{
     //Atributos 
     private String color;
     private TipoPuerta tipo;
-
-    public Puerta(String color, TipoPuerta tipo) {
+    private boolean estado;
+    public Puerta(String color, TipoPuerta tipo,boolean estado) {
         this.color = color;
         this.tipo = tipo;
+        this.estado = estado;
     }
 
     public Puerta() {
@@ -75,14 +76,21 @@ public class Puerta{
     
     public void abrir(){
         
-        System.out.println("La puerta esta abierta");
+       this.estado = true;
         
     }
     
     public void cerrar(){
         
-        System.out.println("La puerta esta cerrada");
-        
+        this.estado = false;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
     
 }
