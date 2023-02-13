@@ -12,16 +12,17 @@ import java.util.Objects;
  * @author pablo
  */
 public class Casa {
-    
+    //Mirar atentanment ele diagrama, si solo pone 1 no es una list,a pero si sale el asterisco
+    //es una lista entonces
     private String color;
     private int numHabitaciones;
-    private ArrayList<Puerta> puertas;
+    private Puerta puertas;
     private ArrayList<Ventana> ventanas;
     private ArrayList<Calefactor> calefactor;
     public Casa(String color, int numHabitaciones,Puerta puerta,Ventana ventana,Calefactor calefactor) {
         this.color = color;
         this.numHabitaciones = numHabitaciones;
-        this.puertas = new ArrayList<>();
+        this.puertas = puerta;
         this.ventanas = new ArrayList<>();
         ventanas.add(ventana);
         this.calefactor=new ArrayList<>();
@@ -51,13 +52,7 @@ public class Casa {
         return "Casa{" + "color=" + color + ", numHabitaciones=" + numHabitaciones + ", puertas=" + puertas + ", ventanas=" + ventanas + ", calefactor=" + calefactor.toString() + '}';
     }
 
-    public ArrayList<Puerta> getPuertas() {
-        return puertas;
-    }
-
-    public void setPuertas(ArrayList<Puerta> puertas) {
-        this.puertas = puertas;
-    }
+    
 
     public ArrayList<Ventana> getVentanas() {
         return ventanas;
@@ -73,6 +68,14 @@ public class Casa {
 
     public void setCalefactor(ArrayList<Calefactor> calefactor) {
         this.calefactor = calefactor;
+    }
+
+    public Puerta getPuertas() {
+        return puertas;
+    }
+
+    public void setPuertas(Puerta puertas) {
+        this.puertas = puertas;
     }
 
    

@@ -16,10 +16,12 @@ public class Ventana {
     
     private String formaVentana;
     private String colorVentana;
-    
-    public Ventana(String formaVentana, String colorVentana) {
+    private boolean estadoVetana;
+ 
+    public Ventana(String formaVentana, String colorVentana, boolean estadoVetana) {
         this.formaVentana = formaVentana;
         this.colorVentana = colorVentana;
+        this.estadoVetana = estadoVetana;
     }
     
 
@@ -50,6 +52,14 @@ public class Ventana {
         return hash;
     }
 
+    public boolean isEstadoVetana() {
+        return estadoVetana;
+    }
+
+    public void setEstadoVetana(boolean estadoVetana) {
+        this.estadoVetana = estadoVetana;
+    }
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -74,13 +84,13 @@ public class Ventana {
         return "Ventana{" + "formaVentana=" + formaVentana + '}';
     }
     
-    public static void abrir(){
+    public  void abrir(){
         
-        System.out.println("La ventana esta abierta");
+        this.estadoVetana=true;
     }
     
-    public static void cerrar(){
+    public  void cerrar(){
         
-        System.out.println("La ventana esta cerrrada");
+        this.estadoVetana=false;
     }
 }

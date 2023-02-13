@@ -20,7 +20,7 @@ public class Prueba {
     public static void main(String[] args) {
         // TODO code application logic here
         //Creo los objetos
-        Ventana v1 = new Ventana("Cuadrada", "Blanca");
+        Ventana v1 = new Ventana("Cuadrada", "Blanca",true);
         Puerta p1 = new Puerta("Marron", TipoPuerta.PVC, false);
         Calefactor c1 = new Calefactor(21);
         //Creo la casa 

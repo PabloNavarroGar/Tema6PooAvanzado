@@ -9,30 +9,17 @@ package Ejercicio1Casa;
  * @author samue
  */
 public class VentanaAbatible extends Ventana {
-    
-    
-    private boolean estado;
 
-    public VentanaAbatible(boolean estado, String formaVentana, String colorVentana) {
-        super(formaVentana, colorVentana);
-        this.estado = estado;
-    }
-
-    public VentanaAbatible() {
-    }
-    
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public VentanaAbatible(String formaVentana, String colorVentana, boolean estadoVetana) {
+        super(formaVentana, colorVentana, estadoVetana);
     }
 
     @Override
     public String toString() {
-        return super.toString()+ "VentanaAbatible{" + "estado=" + estado + '}';
+        return "VentanaAbatible{" + '}';
     }
     
+    
+   
    
 }

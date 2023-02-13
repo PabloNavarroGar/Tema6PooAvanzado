@@ -10,23 +10,18 @@ package Ejercicio1Casa;
  */
 public class VentanaCorredera extends Ventana {
         //Atributo
-        private boolean estado;
+      
         private Persiana persiana;
         //Constructor
 
-    public VentanaCorredera(boolean estado, Persiana persiana, String formaVentana, String colorVentana) {
-        super(formaVentana, colorVentana);
-        this.estado = estado;
+    public VentanaCorredera(Persiana persiana, String formaVentana, String colorVentana, boolean estadoVetana) {
+        super(formaVentana, colorVentana, estadoVetana);
         this.persiana = persiana;
     }
 
-    public boolean isEstado() {
-        return estado;
-    }
+    
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
+   
 
     public Persiana getPersiana() {
         return persiana;
@@ -38,7 +33,7 @@ public class VentanaCorredera extends Ventana {
 
     @Override
     public String toString() {
-        return super.toString()+ "VentanaCorredera{" + "estado=" + estado + ", persiana=" + persiana + '}';
+        return super.toString()+ "VentanaCorredera{+ persiana=" + persiana + '}';
     }
 
         
