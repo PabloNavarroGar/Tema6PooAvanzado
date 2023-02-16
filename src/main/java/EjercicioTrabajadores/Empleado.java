@@ -9,7 +9,7 @@ package EjercicioTrabajadores;
  *
  * @author jcarlosvico@maralboran.es
  */
-public class Empleado extends Persona{
+public abstract class Empleado extends Persona {
     
     private double salario;
 
@@ -40,9 +40,9 @@ public class Empleado extends Persona{
     }
 
     // Aumenta el salario según el plus que se pasa 
-    public void aumentarSalario(double plus) {
-        this.salario += Math.abs(plus);
-    }
+    public  abstract void aumentarSalario(double plus);
+        
+    
     
     @Override
     // Sobrescribe el método comer() de la clase padre

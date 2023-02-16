@@ -58,4 +58,8 @@ public class Programador extends Empleado {
     public void cotizar(){
         System.out.println("Cotizando como programador");
     }
+
+    @Override
+    public void aumentarSalario(double plus) {
+    }
 }

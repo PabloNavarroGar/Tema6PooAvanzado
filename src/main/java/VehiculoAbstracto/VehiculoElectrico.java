@@ -43,6 +43,17 @@ public class VehiculoElectrico  extends Vehiculo {
         
         System.out.println("El vehiculo electrico con matricula "+getMatricula()+ "se le cambia la bateria ");
     }
+
+    @Override
+    public void arrancar(int numero) {
+        System.out.println("El vehiculo " +this.getBastidor()+ " esta arrando");
+    }
+
+    @Override
+    public void apagar(int numero) {
+        
+        System.out.println("El vehiculo " +this.getBastidor()+ " esta apagado");
+    }
    
     
     

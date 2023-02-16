@@ -10,7 +10,7 @@ package EjercicioTrabajadores;
  * @author jcarlosvico@maralboran.es
  */
 public class Persona implements Comparable<Persona> {
-
+    //Por herencia se pone la comparable en TODAS
     //Atributos
     private String nombre;
     private String nif;
@@ -64,6 +64,6 @@ public class Persona implements Comparable<Persona> {
 
     @Override
     public int compareTo(Persona o) {
-        return this.nif.compareToIgnoreCase(o.nif);
+        return this.nif.compareTo(o.nif);
     }
 }

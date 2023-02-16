@@ -35,6 +35,16 @@ public class VehiculoCombustion extends Vehiculo{
         
         System.out.println("El vehiculo " + this.getMatricula() + " esta repostando");
     }
+
+    @Override
+    public void arrancar(int numero) {
+         System.out.println("El vehiculo " +this.getBastidor()+ " esta arrancado");
+    }
+
+    @Override
+    public void apagar(int numero) {
+         System.out.println("El vehiculo " +this.getBastidor()+ " esta apagado");
+    }
     
     
     
