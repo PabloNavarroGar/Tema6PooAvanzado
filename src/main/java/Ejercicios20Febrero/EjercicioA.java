@@ -24,7 +24,7 @@ public class EjercicioA {
         } while (!esNumero(numero));
         //Convertimos los numeros en un chatarray
         char[] numeros = numero.toCharArray();
-        //Compruebo con los indices en inicio el array el sito 0, y luego pongo el length-1 que se va al ultimo lugar
+        //Compruebo con los indices en inicio el array el sitio 0, y luego pongo el length-1 que se va al ultimo lugar
         if (esCapicua(numeros, 0, numeros.length - 1)) {
             JOptionPane.showMessageDialog(null, "El número es capicúa");
         } else {

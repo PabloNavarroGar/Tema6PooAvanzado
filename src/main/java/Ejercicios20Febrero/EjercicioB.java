@@ -24,19 +24,19 @@ public class EjercicioB {
         // índice de la primera ocurrencia del carácter 'a'
         int indice = obtenerIndiceCaracter(frase, 'a');
         System.out.println("El índice de la primera 'a' es: " + indice);
-       // posiciones del carácter 'm' en el String
+        // posiciones del carácter 'm' en el String
         int[] posiciones = obtenerPosicionesDeCaracter(frase, 'm');
         System.out.print("Las posiciones de la 'm' son: ");
         for (int posicion : posiciones) {
             System.out.print(posicion + " ");
         }
         System.out.println();
-        
-          // recorremos el String y mostramos información sobre cada carácter
+
+        // recorremos el String y mostramos información sobre cada carácter
         for (int i = 0; i < frase.length(); i++) {
             char c = frase.charAt(i);//Declaro un char para las letras
             System.out.print("El carácter " + c + " tiene valor Unicode " + (int) c);
-            //Uso de la clase Character
+            //Uso de la clase Character, por si es mayuscula
             if (Character.isUpperCase(c)) {
                 System.out.println(" y es una letra mayúscula");
             } else if (Character.isLowerCase(c)) {
@@ -47,19 +47,19 @@ public class EjercicioB {
                 System.out.println(" y es un carácter especial");
             }
         }
-        
+
         // eliminamos los espacios en blanco de la cadena y mostramos la nueva cadena y su tamaño
         String nuevaFrase = frase.replaceAll(" ", "");
         System.out.println("La nueva frase sin espacios en blanco es: " + nuevaFrase);
         System.out.println("El tamaño de la nueva frase es: " + nuevaFrase.length());
-        
+
     }
-    
+
     public static int obtenerIndiceCaracter(String cadena, char caracter) {
         return cadena.indexOf(caracter);//Uso indexOf
     }
-    
-     public static int[] obtenerPosicionesDeCaracter(String cadena, char caracter) {
+
+    public static int[] obtenerPosicionesDeCaracter(String cadena, char caracter) {
         int[] posiciones = new int[cadena.length()];
         int contador = 0;
         for (int i = 0; i < cadena.length(); i++) {
@@ -71,7 +71,7 @@ public class EjercicioB {
         }
         //Posiciones finales, creo un array con las posicioes finales 
         // le meto el contador, que ha ido contando los caracteres
-        int[] posicionesFinales = new int[contador]; 
+        int[] posicionesFinales = new int[contador];
         for (int i = 0; i < contador; i++) {
             posicionesFinales[i] = posiciones[i];
         }
