@@ -40,7 +40,7 @@ public abstract class Figuras {
     public String toString() {
         return "Figuras{" + "base=" + base + ", altura=" + altura + '}';
     }
-    
+    //Metodo abstracto
     public abstract  double  calcularArea();
     
 }
