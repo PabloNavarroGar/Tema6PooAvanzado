@@ -2,17 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ejercicioSetMapRepasoHuelga;
+package ejercicioVueloSam;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 /**
  *
- * @author pablo
+ * @author samue
  */
 public class Main {
 
@@ -20,27 +23,18 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        //Clase vuelo con codigo,origen,destino,duracion y se le pasa y la lista de Pasajeros,
-        //Clase Pasajeros
-        //A) A partir la lista de vuelos , hace return de un Map que para cada ciudad de destino diga cuanta gente viajo en total
-        //B) A partir de la lista de vuelos guarde para cada codVuelo el conjunto de pasajaeros
-        //Diferencia entre replace y put
-        // put: pone la key aunque no haya
-        // replace: si no hay key, no va a hacer nada 
-        
-          //---
-        List<Pasajero1> lista1 = new ArrayList<>();
-        List<Pasajero1> lista2 = new ArrayList<>();
-        List<Pasajero1> lista3 = new ArrayList<>();
-        List<Pasajero1> lista4 = new ArrayList<>();
         //---
-        Pasajero p1 = new Pasajero1("Samuel", "Jiménez", "47896512Ñ", TipoPasajero.STANDARD);
-        Pasajero p2 = new Pasajero1("Nacho", "Salcedo", "14578965K", TipoPasajero.VIP);
-        Pasajero p3 = new Pasajero1("Victoria", "Sampalo", "24587965M", TipoPasajero.VIP);
-        Pasajero p4 = new Pasajero1("José Ángel", "Marín", "879654125", TipoPasajero.STANDARD);
-        Pasajero p5 = new Pasajero1("Cristina", "Hernández", "32145879T", TipoPasajero.STANDARD);
-        Pasajero p6 = new Pasajero1("Jessica", "Macioszek", "X78451258B", TipoPasajero.VIP);
+        List<Pasajero> lista1 = new ArrayList<>();
+        List<Pasajero> lista2 = new ArrayList<>();
+        List<Pasajero> lista3 = new ArrayList<>();
+        List<Pasajero> lista4 = new ArrayList<>();
+        //---
+        Pasajero p1 = new Pasajero("Samuel", "Jiménez", "47896512Ñ", TipoPasajero.STANDARD);
+        Pasajero p2 = new Pasajero("Nacho", "Salcedo", "14578965K", TipoPasajero.VIP);
+        Pasajero p3 = new Pasajero("Victoria", "Sampalo", "24587965M", TipoPasajero.VIP);
+        Pasajero p4 = new Pasajero("José Ángel", "Marín", "879654125", TipoPasajero.STANDARD);
+        Pasajero p5 = new Pasajero("Cristina", "Hernández", "32145879T", TipoPasajero.STANDARD);
+        Pasajero p6 = new Pasajero("Jessica", "Macioszek", "X78451258B", TipoPasajero.VIP);
         //---
         lista1.add(p1);
         lista1.add(p3);
@@ -89,16 +83,16 @@ public class Main {
         //---
         System.out.println("-----");
         //---
-        Map<Integer, Set<Pasajero1>> conjunto = conjuntoPasajeros(listadoVuelos);
+        Map<Integer, Set<Pasajero>> conjunto = conjuntoPasajeros(listadoVuelos);
         //---
         Set<Integer> codes = conjunto.keySet();
-        Collection<Set<Pasajero1>> pasaj = conjunto.values();
+        Collection<Set<Pasajero>> pasaj = conjunto.values();
         //---
         codes.forEach(System.out::println);
         pasaj.forEach(System.out::println);
     }
-    
-     private static Map<String, Integer> registroLlegadas(List<Vuelo> lista) {
+
+    private static Map<String, Integer> registroLlegadas(List<Vuelo> lista) {
         Map<String, Integer> aux = new HashMap<>();
 
         for (int i = 0; i < lista.size(); i++) {
@@ -118,5 +112,23 @@ public class Main {
         }
         return aux;
     }
-    
+
+    //A partir la lista de vuelos que guarde para cada codVuelo el conjunto de pasajeros.
+    private static Map<Integer, Set<Pasajero>> conjuntoPasajeros(List<Vuelo> lista) {
+        Map<Integer, Set<Pasajero>> aux = new TreeMap<>();
+        //---
+        for (Vuelo v : lista) {
+            //--- Así pasamos directamente la lista de pasajeros a un TreeSet
+            Set<Pasajero> setPas = new TreeSet<>(v.getListadoPasajeros());
+            /*
+            Ya no hace falta el for, con lo de arriba en el tree set seleccionamos el ovbjeto y obtemeos su lista para que la recorra
+            for (int i = 0; i < v.getListadoPasajeros().size(); i++) {
+                setPas.add(v.getListadoPasajeros().get(i));
+            }
+             */
+            aux.put(v.getCodVuelo(), setPas);
+        }
+        return aux;
+
+    }
 }
