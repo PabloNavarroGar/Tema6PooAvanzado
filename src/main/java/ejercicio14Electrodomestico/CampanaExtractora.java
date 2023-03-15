@@ -8,7 +8,7 @@ package ejercicio14Electrodomestico;
  *
  * @author pablo
  */
-public class CampanaExtractora extends Electrodomestico  {
+public class CampanaExtractora extends Electrodomestico implements Silencioso{
     
     
         private int decibelios;
@@ -36,6 +36,8 @@ public class CampanaExtractora extends Electrodomestico  {
     @Override
     public void silencio() {
     }
+
+   
         
         
         

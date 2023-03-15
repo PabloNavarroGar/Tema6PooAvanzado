@@ -4,6 +4,8 @@
  */
 package ejercicio16_Robots;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author samue
@@ -13,13 +15,12 @@ public class Robots implements Comparable<Robots>{
     private int numeroSerie;
     private int porcentajeVida;
 
-    public Robots(int numeroSerie) {
-        this.numeroSerie = numeroSerie;
+    public Robots() {
+        this.numeroSerie = UtilidadesMetodos.numeroEnteroRandom(1,1000 );
         this.porcentajeVida = UtilidadesMetodos.numeroEnteroRandom(1, 100);
     }
 
-    public Robots() {
-    }
+    
     
     public int getNumeroSerie() {
         return numeroSerie;
@@ -47,5 +48,7 @@ public class Robots implements Comparable<Robots>{
         return Integer.compare(numeroSerie, numeroSerie);
     }
     
+    
+     
     
 }

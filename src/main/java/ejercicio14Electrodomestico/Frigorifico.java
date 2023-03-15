@@ -8,7 +8,7 @@ package ejercicio14Electrodomestico;
  *
  * @author pablo
  */
-public class Frigorifico extends Electrodomestico {
+public class Frigorifico extends Electrodomestico implements Silencioso {
     
     private int capacidad;
 
