@@ -17,11 +17,15 @@ public abstract class Persona {
     private String apellidos;
     protected Nif nif ;
 
-    public Persona(String nombre, String apellidos) {
+    public Persona(String nombre, String apellidos,Nif nif) {
         this.nombre = nombre;
         this.apellidos = apellidos;
+        this.nif = nif;
     }
 
+    public Persona() {
+    }
+    
     public String getNombre() {
         return nombre;
     }

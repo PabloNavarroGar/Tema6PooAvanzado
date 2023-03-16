@@ -6,6 +6,7 @@ package ejercicioHospital;
 
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
+import java.util.Objects;
 import java.util.Random;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
@@ -53,6 +54,32 @@ public class Nif {
     @Override
     public String toString() {
         return "Nif{" + "numero=" + numero + ", letra=" + letra + ", fechaCaducidad=" + fechaCaducidad + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.numero);
+        hash = 59 * hash + this.letra;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Nif other = (Nif) obj;
+        if (this.letra != other.letra) {
+            return false;
+        }
+        return Objects.equals(this.numero, other.numero);
     }
     
     

@@ -9,7 +9,7 @@ package ejercicioHospital;
  * @author pablo
  */
 public enum Grupo {
-    C(17.5),D(18),E(18.5);
+    C(0.17),D(0.18),E(0.185);
     
     private double irpf;
 

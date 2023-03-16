@@ -9,19 +9,23 @@ package ejercicioHospital;
  * @author pablo
  */
 public abstract class Empleado extends Persona {
-    
-    
+
     //Atributos
+    public Empleado(String numeroSeguridadSocial, double salario, String nombre, String apellidos, Nif nif) {
+        super(nombre, apellidos,nif);
+        this.numeroSeguridadSocial = numeroSeguridadSocial;
+        this.salario = salario;
+    }
     
     private String numeroSeguridadSocial;
     private double salario;
 
-    public Empleado(String numeroSeguridadSocial, double salario, String nombre, String apellidos) {
-        super(nombre, apellidos);
-        this.numeroSeguridadSocial = numeroSeguridadSocial;
-        this.salario = salario;
-    }
+   
 
+    public Empleado() {
+    }
+    
+    
     public String getNumeroSeguridadSocial() {
         return numeroSeguridadSocial;
     }
@@ -40,7 +44,7 @@ public abstract class Empleado extends Persona {
 
     @Override
     public String toString() {
-        return "Empleado{" + "numeroSeguridadSocial=" + numeroSeguridadSocial + ", salario=" + salario + '}';
+        return super.toString()+"\n Empleado{" + "numeroSeguridadSocial=" + numeroSeguridadSocial + ", salario=" + salario + '}';
     }
     
     public abstract double calcularIRPF();

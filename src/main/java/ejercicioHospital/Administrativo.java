@@ -9,16 +9,16 @@ package ejercicioHospital;
  * @author pablo
  */
 public class Administrativo extends Empleado {
-    
-    
+
     private Grupo grupo;
 
-    public Administrativo(Grupo grupo, String numeroSeguridadSocial, double salario, String nombre, String apellidos) {
-        super(numeroSeguridadSocial, salario, nombre, apellidos);
+    public Administrativo(Grupo grupo, String numeroSeguridadSocial, double salario, String nombre, String apellidos, Nif nif) {
+        super(numeroSeguridadSocial, salario, nombre, apellidos, nif);
         this.grupo = grupo;
     }
-    
-    
+
+    public Administrativo() {
+    }
 
     public Grupo getGrupo() {
         return grupo;
@@ -32,15 +32,24 @@ public class Administrativo extends Empleado {
     public String toString() {
         return "Administrativo{" + "grupo=" + grupo + '}';
     }
-    
+
     @Override
     public double calcularIRPF() {
-        double degradacion
-        
+
+        if (this.grupo.equals('C')) {
+            return this.getSalario() - (this.getSalario() * this.grupo.getIrpf());
+
+        } else if (this.grupo.equals('D')) {
+            return this.getSalario() - (this.getSalario() * this.grupo.getIrpf());
+        } else {
+
+            return this.getSalario() - (this.getSalario() * this.grupo.getIrpf());
+        }
+
     }
-    
-    public void registrarDocumento(String nombreDoc){
-        
-        System.out.println("Entrga un documento llamado "+ nombreDoc);
+
+    public void registrarDocumento() {
+
+        System.out.println("El administrativo " + this.getNombre() + " esta registrando un documento");
     }
 }
