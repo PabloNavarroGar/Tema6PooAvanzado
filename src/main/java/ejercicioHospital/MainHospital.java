@@ -73,7 +73,7 @@ public class MainHospital {
     }
     
     public static Medico crearMedico() {
-        String numeroHistorial = RandomStringUtils.randomAscii(6);
+        String numeroHistorial = RandomStringUtils.randomNumeric(6);
         String nombre = generarNombreAleatorio();
         String apellidos = generarApellidoAleatorio() + generarApellidoAleatorio();
         Medico aux = new Medico("Cirugia", numeroHistorial, 30000, nombre, apellidos, new Nif(LocalDate.now()));
