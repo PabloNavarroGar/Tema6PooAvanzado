@@ -16,11 +16,13 @@ public final class Temporal extends Sala {
      private LocalDate fechaInicio;
      private LocalDate fechaFin;
 
-    public Temporal(LocalDate fechaInicio, LocalDate fechaFin, String nombreSala, int codSala, Sensor sensor) {
-        super(nombreSala, codSala, sensor);
+    public Temporal(LocalDate fechaInicio, LocalDate fechaFin, String nombreSala, int codSala, Temperatura temperatura, Humedad humedad) {
+        super(nombreSala, codSala, temperatura, humedad);
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
     }
+
+   
 
     public LocalDate getFechaFin() {
         return fechaFin;

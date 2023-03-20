@@ -11,10 +11,12 @@ package ejercicioMuseoMinerva;
 public final class Fija extends Sala {
         private boolean estado;
 
-    public Fija(boolean estado, String nombreSala, int codSala, Sensor sensor) {
-        super(nombreSala, codSala, sensor);
+    public Fija(boolean estado, String nombreSala, int codSala, Temperatura temperatura, Humedad humedad) {
+        super(nombreSala, codSala, temperatura, humedad);
         this.estado = estado;
     }
+
+   
 
     public boolean isEstado() {
         return estado;

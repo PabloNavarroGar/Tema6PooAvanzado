@@ -11,18 +11,20 @@ import java.util.ArrayList;
  * @author samue
  */
 public abstract class Sala {
-    
+
     //Atributos
     private String nombreSala;
     private int codSala;
     private ArrayList<Obra> obras;
-    private Sensor sensor;
+    private Sensor temperatura;
+    private Sensor humedad;
 
-    public Sala(String nombreSala, int codSala, Sensor sensor) {
+    public Sala(String nombreSala, int codSala, Temperatura temperatura, Humedad humedad) {
         this.nombreSala = nombreSala;
         this.codSala = codSala;
         this.obras = new ArrayList<>();
-        this.sensor = sensor;
+        this.temperatura = temperatura;
+        this.humedad = humedad;
     }
 
     public String getNombreSala() {
@@ -49,32 +51,37 @@ public abstract class Sala {
         this.obras = obras;
     }
 
-    public Sensor getSensor() {
-        return sensor;
+    public void ponerObras(Obra o) {
+        this.obras.add(o);
+
     }
 
-    public void setSensor(Sensor sensor) {
-        this.sensor = sensor;
+    public void quitarObras(Obra o) {
+        this.obras.add(o);
+
+    }
+
+    public Sensor getTemperatura() {
+        return temperatura;
+    }
+
+    public void setTemperatura(Sensor temperatura) {
+        this.temperatura = temperatura;
+    }
+
+    public Sensor getHumedad() {
+        return humedad;
+    }
+
+    public void setHumedad(Sensor humedad) {
+        this.humedad = humedad;
     }
 
     @Override
     public String toString() {
-        return "Sala{" + "nombreSala=" + nombreSala + ", codSala=" + codSala + ", obras=" + obras + ", sensor=" + sensor + '}';
+        return "Sala{" + "nombreSala=" + nombreSala + ", codSala=" + codSala + ", obras=" + obras + ", temperatura=" + temperatura + ", humedad=" + humedad + '}';
     }
-    
-    public void ponerObras(Obra o){
-        this.obras.add(o);
-        
-        
-        
-    }
-    
-    public void quitarObras(Obra o){
-        this.obras.add(o);
-        
-        
-        
-    }
+
     
     
 }

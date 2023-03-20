@@ -12,7 +12,7 @@ import org.apache.commons.lang3.RandomUtils;
  *
  * @author samue
  */
-public abstract class Empleado implements Comparable <Empleado>{
+public abstract class Empleado implements Comparable<Empleado> {
 
     //Atributos
     final private String nif;
@@ -70,6 +70,11 @@ public abstract class Empleado implements Comparable <Empleado>{
     @Override
     public String toString() {
         return "Empleado{" + "nif=" + nif + ", nombre=" + nombre + ", apellidos=" + apellidos + '}';
+    }
+
+    @Override
+    public int compareTo(Empleado o) {
+        return this.nif.compareToIgnoreCase(o.getNif());
     }
 
 }

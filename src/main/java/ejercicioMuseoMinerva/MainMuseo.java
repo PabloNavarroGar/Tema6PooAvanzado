@@ -26,15 +26,17 @@ public class MainMuseo {
         Obra o1 = new Cuadro("Virgen del Canonico", EpocasObras.RENACENTISTA, "Van der Peile");
         Obra o2 = new Estatua(EpocasObras.ROMANTICISMO, "Marmol", "David De Miguel Angel", "Miguel Angel");
         
-        //Creo la sala
-        Sala s1 = new Fija(true, "Prueba", 1, new Temperatura(45, 8, 1));
+        //Creo la sala y dentro de esta se crean los sensores en el constructor
+        Sala s1 = new Fija(true, "Contemporanea", 1, new Temperatura(55, 5, 1), new Humedad(85, 25, 1));
         
+      
+       
         
         //Añado las obras a la Sala
         
         s1.ponerObras(o1);
         s1.ponerObras(o2);
-        
+       
         
         //Meto las salas en el museo y los empleados
         
