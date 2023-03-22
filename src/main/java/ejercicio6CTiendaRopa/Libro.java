@@ -59,6 +59,6 @@ public abstract class Libro extends Productos implements Comparable <Libro>{
         return this.isbn.compareTo(o.isbn);
     }
     
-    
+    public abstract void tapaLibro();
     
 }

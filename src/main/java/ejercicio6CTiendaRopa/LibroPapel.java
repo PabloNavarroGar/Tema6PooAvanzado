@@ -35,6 +35,11 @@ public class LibroPapel extends Libro implements SeEnvia {
         
         System.out.println(this.toString()+" y la direccion a la que se manda es "+ direccion);
     }
+
+    @Override
+    public void tapaLibro() {
+        System.out.println("La tapa de este libro es dura");
+    }
     
     
     

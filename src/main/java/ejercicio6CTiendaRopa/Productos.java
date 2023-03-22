@@ -22,6 +22,7 @@ public abstract class Productos {
         this.iva = iva;
         this.descripcion = descripcion;
     }
+    
 
     public Productos() {
     }

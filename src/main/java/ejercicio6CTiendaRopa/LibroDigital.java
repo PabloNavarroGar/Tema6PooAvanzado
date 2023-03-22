@@ -37,6 +37,11 @@ public class LibroDigital extends Libro implements SeDescarga{
            
         
     }
+
+    @Override
+    public void tapaLibro() {
+        System.out.println("Los libros digitale sno tiene tapa");
+    }
       
       
       
