@@ -6,10 +6,9 @@ package ejercicioMuseoMinerva;
 
 /**
  *
- * @author pablo
+ * @author samue
  */
 public interface Restaurar {
     
-    public void restaurar();
-    
+    public void restaurarUnaObra(Obra o);
 }

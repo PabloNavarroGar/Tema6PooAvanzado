@@ -18,7 +18,7 @@ public abstract class Sala {
     private ArrayList<Obra> obras;
     private Sensor temperatura;
     private Sensor humedad;
-
+        // Se declara en el constructor, un sesor de humer y temperatura
     public Sala(String nombreSala, int codSala, Temperatura temperatura, Humedad humedad) {
         this.nombreSala = nombreSala;
         this.codSala = codSala;

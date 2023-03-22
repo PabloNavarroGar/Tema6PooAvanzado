@@ -51,6 +51,7 @@ public class Estatua extends Obra {
     public String toString() {
         return super.toString()+ "\n Estatua{" + "tipoObra=" + tipoObra + ", material=" + material + ", nombre=" + nombre + '}';
     }
+
     
     
 }
