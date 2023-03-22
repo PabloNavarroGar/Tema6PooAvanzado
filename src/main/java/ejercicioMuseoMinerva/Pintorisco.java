@@ -33,8 +33,8 @@ public class Pintorisco extends Empleado implements Restaurar {
 
     @Override
     public void restaurarUnaObra(Obra o) {
-               //Explictia
-         if (o instanceof Cuadro) {
+               //Explictia, se puede poner o instaceof Cuadro cuadro, o poner un objeto
+         if (o instanceof Cuadro ) {
          
             System.out.println("El cuadro del autor " + ((Cuadro) o).getAutor()+ " ha sido restaurada.");
         } else {
