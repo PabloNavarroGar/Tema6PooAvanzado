@@ -8,7 +8,7 @@ package ejercicio11Figuras;
  *
  * @author pablo
  */
-public abstract class Figuras {
+public abstract class Figuras{
     //Atributos de clase
     
     private double base;
@@ -20,6 +20,10 @@ public abstract class Figuras {
         this.altura = altura;
     }
 
+    public Figuras() {
+    }
+
+    
     public double getBase() {
         return base;
     }
@@ -43,4 +47,5 @@ public abstract class Figuras {
     //Metodo abstracto
     public abstract  double  calcularArea();
     
+   
 }

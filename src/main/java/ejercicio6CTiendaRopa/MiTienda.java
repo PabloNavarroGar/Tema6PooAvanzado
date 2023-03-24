@@ -33,7 +33,7 @@ public class MiTienda {
         Productos l2 = new LibroDigital(576, 5, 14.99, 10, "La Casa del Dragon de RR Martin");
         Productos l4 = new LibroDigital(250, 5, 14.99, 10, "Bandolero");
         Productos m3 = new Musica("Madonna", 45, 20.65, 21, "Grandes exito");
-        
+
         //Objeto que no esta en la lista
         Productos l5 = new LibroDigital(457, 8, 14.99, 10, "La Casa del Dragon de RR Martin-Parte 2");
         //Crea una lista de productos y añade dos objetos de cada tipo de producto distinto (de los posibles) a la misma.
@@ -94,59 +94,53 @@ public class MiTienda {
         System.out.println("-------------Listado de todos los libros que hay en la lista con el ITERATOR---------------");
         //Muestra los datos de la lista de libros usando un objeto Iterator. 
         Iterator<Libro> iterador = listaLibros.iterator();
-        while(iterador.hasNext()){
-          Libro lib = iterador.next();
+
+        while (iterador.hasNext()) {
+            Libro lib = iterador.next();
             System.out.println(lib);
         }
-        
+
         //Ordena los libros según ISBN, haciendo uso de <<Comparable>>. Muestra la lista de libros ordenada. 
         System.out.println("-------Listado de todos los libros ordenados por su ISBN");
         Collections.sort(listaLibros);
-        
-        listaLibros.forEach(System.out::println);
-        
-        //Recorre de nuevo la lista de libros y en cada iteración, ejecuta enviar() o descargar() en función del tipo de libro.
 
-         while(iterador.hasNext()){
-          Libro lib = iterador.next();
-           if(lib instanceof LibroDigital){
-               ((LibroDigital)lib).descargar();//Casting explicito
-               
-           }
-           
-           if(lib instanceof LibroPapel){
-               ((LibroPapel)lib).enviar("Estepona");//Casting explicito
-               
-           }
+        listaLibros.forEach(System.out::println);
+
+        //Recorre de nuevo la lista de libros y en cada iteración, ejecuta enviar() o descargar() en función del tipo de libro.
+        while (iterador.hasNext()) {
+            Libro lib = iterador.next();
+            if (lib instanceof LibroDigital) {
+                ((LibroDigital) lib).descargar();//Casting explicito
+
+            }
+
+            if (lib instanceof LibroPapel) {
+                ((LibroPapel) lib).enviar("Estepona");//Casting explicito
+
+            }
         }
-         
-         
-         //Utiliza el método contains(Object) sobre la lista de libros para comprobar si existe un libro o no existe.
-            //Ternario
+
+        //Utiliza el método contains(Object) sobre la lista de libros para comprobar si existe un libro o no existe.
+        //Ternario para el uso de contains
         System.out.println(listaLibros.contains((Libro) l4) ? "\nEl libro está en la lista" : "\nEl libro no está en la lista");
         //---
         System.out.println(listaLibros.contains((Libro) l5) ? "\nEl libro está en la lista" : "\nEl libro no está en la lista\n");
-        
-        
-        
-         //Apartado 12 - Usando la lista de productos inicial, crea una nueva lista con todos los objetos que Se Envian.
-         // Creo una lista de envios
-         List<SeEnvia> listaEnvio = new ArrayList<>();
+
+        //Apartado 12 - Usando la lista de productos inicial, crea una nueva lista con todos los objetos que Se Envian.
+        // Creo una lista de envios
+        List<SeEnvia> listaEnvio = new ArrayList<>();
         for (Productos p : listaProductos) {
             if (p instanceof SeEnvia) {
-                 listaEnvio.add((SeEnvia) p);
-                          
+                listaEnvio.add((SeEnvia) p);
+
             }
         }
-        
-        
-       // Recorre la lista de objetos que Se Envian y llama al método de la interfaz.
-       
-       listaEnvio.forEach(p -> p.enviar("Estepona"));
-       
-       //Inventa un método abstracto en Libro que tenga comportamientos diferentes en las subclases. Implementa los métodos en las clases hijas.
 
-       System.out.println("\nProbamos el método abstracto de los libros\n");
+        // Recorre la lista de objetos que Se Envian y llama al método de la interfaz.
+        listaEnvio.forEach(p -> p.enviar("Estepona"));
+
+        //Inventa un método abstracto en Libro que tenga comportamientos diferentes en las subclases. Implementa los métodos en las clases hijas.
+        System.out.println("\nProbamos el método abstracto de los libros\n");
         listaLibros.forEach(l -> l.tapaLibro());
     }
 
