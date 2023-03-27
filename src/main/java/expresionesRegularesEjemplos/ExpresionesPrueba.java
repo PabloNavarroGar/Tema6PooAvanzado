@@ -30,9 +30,13 @@ public class ExpresionesPrueba {
         //C.Que cumpla que una letra con numero tantas veces como se quiera
         //ej:a7b5c9z;
         //Creo  la expresión regular.
+        //
         String regex = "al : [N|S|E|O]";
         // Creamos nuestro texto que si contendrá el patrón buscado.
-        String txt = "En andalucia Malaga esta al : S y Granada al : E, Cadiz al : O de Malaga";
+        String txt = "En andalucia Malaga esta al : S y Granada al : E de esta , Cadiz al : O de Malaga";
+        System.out.println(txt.matches(regex));
+        
+        Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
         //  Compilamos el patrón a buscar
         Pattern pat = Pattern.compile(regex);
         //  Creamos un buscador de patrones en el texto
@@ -43,6 +47,7 @@ public class ExpresionesPrueba {
             System.out.println("Patrón encontrado: " + matcher.group());
         }
 
+        //Ejercicio2
         String regex2 = "ini[0-9]{2}fin";
 
         String txt2 = "rigithiorthrtb,rmgbmrtmfini13finhkrithkriothomrtgmrg";
@@ -56,7 +61,7 @@ public class ExpresionesPrueba {
             System.out.println("Patrón encontrado: " + matcher2.group());
         }
 
-        /*----- EJERCICIO 3 -----*/
+        //Ejercicio3
         
         String regex3 = "[a-z|A-Z]{1}[0-9]{1}";
         
@@ -70,7 +75,9 @@ public class ExpresionesPrueba {
 
             System.out.println("Patrón encontrado: " + matcher3.group());
         }
-
+            
+        
+        //el ^ y el $ en la expresion, sirve para claves y cosas en concreto
     }
 
 }
